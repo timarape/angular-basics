@@ -14,6 +14,11 @@ import { Course } from '../model/course';
 export class CourseCardComponent {
   @Input()
   course: Course;
+  @Input({required:true})
+  index: number
+
+  @Input()
+  count:number
 
   @Output()
   courseSelected = new EventEmitter<Course>()
