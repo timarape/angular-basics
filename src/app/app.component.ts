@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {COURSES} from '../db-data';
+import { Course } from './model/course';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,9 @@ import {COURSES} from '../db-data';
 })
 export class AppComponent {
  coreCoures = COURSES[0]
+
+ onCourseSelected(course: Course){
+  console.log(" App compoent - click bubbled to the parent", course)
+
+ }
 }

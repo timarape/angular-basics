@@ -6,5 +6,8 @@
 </div>
 
 <div class="courses">
-  <course-card [course]="coreCoures"></course-card>
+  <course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="coreCoures"
+  ></course-card>
 </div>

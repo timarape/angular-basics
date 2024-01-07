@@ -1,6 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Course } from '../model/course';
+
+
 
 @Component({
   selector: 'course-card',
@@ -10,6 +12,16 @@ import { Course } from '../model/course';
   styleUrl: './course-card.component.css'
 })
 export class CourseCardComponent {
- @Input()
+  @Input()
   course: Course;
+
+  @Output()
+  courseSelected = new EventEmitter<Course>()
+
+  onViewCourse() {
+
+    console.log("This is a card compenent")
+
+    this.courseSelected.emit(this.course)
+  }
 }
